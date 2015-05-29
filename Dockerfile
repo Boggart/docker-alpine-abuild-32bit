@@ -1,6 +1,5 @@
 FROM boggart/alpine-apk-static-32bit:latest
-
-RUN /sbin/apk.static add --update alpine-base alpine-sdk
+RUN ["/sbin/apk.static", "add", "--update", "alpine-base", "alpine-sdk"]
 RUN adduser -G abuild -g "Alpine Package Builder" -s /bin/sh -D builder \
   && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 

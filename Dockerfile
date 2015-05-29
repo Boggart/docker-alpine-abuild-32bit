@@ -1,4 +1,4 @@
-FROM Boggart/docker-alpine-apk-static-32bit:latest
+FROM boggart/alpine-apk-static-32bit:latest
 
 RUN apk-install alpine-base alpine-sdk \
   && adduser -G abuild -g "Alpine Package Builder" -s /bin/sh -D builder \

@@ -1,6 +1,6 @@
 # Alpine Package Builder
 
-This is a Docker image for building Alpine Linux packages.
+This is a Docker image for building 32bit Alpine Linux packages.
 
 ## Usage
 
@@ -9,7 +9,7 @@ In your Alpine Linux package source folder (the folder with your APKBUILD) creat
 Here is an example `Dockerfile`:
 
 ```
-FROM andyshinn/alpine-abuild
+FROM boggart/alpine-abuild-32bit
 ENV PACKAGER_PRIVKEY /package/andys@andyshinn.as-54f23052.rsa
 ```
 

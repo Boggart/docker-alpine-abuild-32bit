@@ -1,6 +1,6 @@
-FROM gliderlabs/alpine:3.1
+FROM Boggart/docker-alpine-apk-static-32bit:latest
 
-RUN apk-install alpine-sdk \
+RUN apk-install alpine-base alpine-sdk \
   && adduser -G abuild -g "Alpine Package Builder" -s /bin/sh -D builder \
   && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -12,7 +12,7 @@ WORKDIR /package
 
 ENV PACKAGER_PRIVKEY /package/abuild.rsa
 ENV REPODEST /packages
-ENV PACKAGER Glider Labs <team@gliderlabs.com>
+ENV PACKAGER Boggart <github.com/boggart>
 
 ONBUILD RUN abuild-apk update
 ONBUILD COPY . /package
